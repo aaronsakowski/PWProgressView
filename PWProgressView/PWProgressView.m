@@ -49,25 +49,39 @@ static const CFTimeInterval PWScaleAnimationDuration    = 0.5;
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.alpha = PWDefaultAlpha;
-        
-        self.boxShape = [CAShapeLayer layer];
-        
-        self.boxShape.fillColor         = [UIColor blackColor].CGColor;
-        self.boxShape.anchorPoint       = CGPointMake(0.5f, 0.5f);
-        self.boxShape.contentsGravity   = kCAGravityCenter;
-        self.boxShape.fillRule          = kCAFillRuleEvenOdd;
-
-        self.progressShape = [CAShapeLayer layer];
-        
-        self.progressShape.fillColor    = [UIColor clearColor].CGColor;
-        self.progressShape.strokeColor  = [UIColor blackColor].CGColor;
-
-        [self.layer addSublayer:self.boxShape];
-        [self.layer addSublayer:self.progressShape];
+        [self commonInit];
     }
     
     return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit
+{
+    self.alpha = PWDefaultAlpha;
+    
+    self.boxShape = [CAShapeLayer layer];
+    
+    self.boxShape.fillColor         = [UIColor blackColor].CGColor;
+    self.boxShape.anchorPoint       = CGPointMake(0.5f, 0.5f);
+    self.boxShape.contentsGravity   = kCAGravityCenter;
+    self.boxShape.fillRule          = kCAFillRuleEvenOdd;
+    
+    self.progressShape = [CAShapeLayer layer];
+    
+    self.progressShape.fillColor    = [UIColor clearColor].CGColor;
+    self.progressShape.strokeColor  = [UIColor blackColor].CGColor;
+    
+    [self.layer addSublayer:self.boxShape];
+    [self.layer addSublayer:self.progressShape];
 }
 
 - (void)layoutSubviews

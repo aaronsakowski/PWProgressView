@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		26BEE1A93809093BC733928C /* libPods-PWProgressView iOS Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AC051C46E9B85BB0AAA923 /* libPods-PWProgressView iOS Tests.a */; };
 		3D1CC285187E59D000C0E305 /* PWMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CC284187E59D000C0E305 /* PWMainView.m */; };
-		3D422CEB1BBE386B005A9C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D422CEA1BBE386B005A9C7F /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		3D422CEB1BBE386B005A9C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D422CEA1BBE386B005A9C7F /* LaunchScreen.storyboard */; };
 		3D512F6D187FC12E0078A5FD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D512F6C187FC12E0078A5FD /* QuartzCore.framework */; };
-		3D958DA21BBF3017002F33FA /* PWProgressViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D65673D189DAA0800FCAF5F /* PWProgressViewSpec.m */; settings = {ASSET_TAGS = (); }; };
-		3D958DA31BBF3091002F33FA /* PWProgressViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D65673D189DAA0800FCAF5F /* PWProgressViewSpec.m */; settings = {ASSET_TAGS = (); }; };
-		3DC175811BBB850F0070433C /* PWProgressView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC175771BBB850F0070433C /* PWProgressView.framework */; settings = {ASSET_TAGS = (); }; };
-		3DC175951BBB86C60070433C /* PWProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8D26218712C3B00243057 /* PWProgressView.m */; settings = {ASSET_TAGS = (); }; };
-		3DC175961BBB86CA0070433C /* PWProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DF8D26118712C3B00243057 /* PWProgressView.h */; settings = {ASSET_TAGS = (); }; };
+		3D958DA21BBF3017002F33FA /* PWProgressViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D65673D189DAA0800FCAF5F /* PWProgressViewSpec.m */; };
+		3D958DA31BBF3091002F33FA /* PWProgressViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D65673D189DAA0800FCAF5F /* PWProgressViewSpec.m */; };
+		3DC175811BBB850F0070433C /* PWProgressView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC175771BBB850F0070433C /* PWProgressView.framework */; };
+		3DC175951BBB86C60070433C /* PWProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8D26218712C3B00243057 /* PWProgressView.m */; };
+		3DC175961BBB86CA0070433C /* PWProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DF8D26118712C3B00243057 /* PWProgressView.h */; };
 		3DF8D23018712BBF00243057 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D22F18712BBF00243057 /* Foundation.framework */; };
 		3DF8D23218712BBF00243057 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D23118712BBF00243057 /* CoreGraphics.framework */; };
 		3DF8D23418712BBF00243057 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF8D23318712BBF00243057 /* UIKit.framework */; };
@@ -246,6 +246,7 @@
 				3D958D951BBF2FB6002F33FA /* Frameworks */,
 				3D958D961BBF2FB6002F33FA /* Resources */,
 				04EFE99FE46B0DFAC573A925 /* Copy Pods Resources */,
+				80D2EACCEC77C1FCA60E8DFC /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,6 +285,7 @@
 				3DC1757D1BBB850F0070433C /* Frameworks */,
 				3DC1757E1BBB850F0070433C /* Resources */,
 				CC89C6974FECA5200C646CB0 /* Copy Pods Resources */,
+				1732B2FE8A674CBCA1EFA4B6 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +410,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PWProgressViewTests/Pods-PWProgressViewTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1732B2FE8A674CBCA1EFA4B6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PWProgressView iOS Tests/Pods-PWProgressView iOS Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		41A640FBBA6A846A88CBB75B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +438,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		80D2EACCEC77C1FCA60E8DFC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PWProgressViewTests/Pods-PWProgressViewTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CC89C6974FECA5200C646CB0 /* Copy Pods Resources */ = {
